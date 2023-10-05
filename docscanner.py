@@ -53,12 +53,6 @@ dst = cv2.cvtColor(dst, cv2.COLOR_BGR2GRAY)
 
 # using thresholding on warped image to get scanned effect (If Required)
 ret,th1 = cv2.threshold(dst,127,255,cv2.THRESH_BINARY)
-th2 = cv2.adaptiveThreshold(dst,255,cv2.ADAPTIVE_THRESH_MEAN_C,\
-            cv2.THRESH_BINARY,11,2)
-th3 = cv2.adaptiveThreshold(dst,255,cv2.ADAPTIVE_THRESH_GAUSSIAN_C,\
-            cv2.THRESH_BINARY,11,2)
-ret2,th4 = cv2.threshold(dst,0,255,cv2.THRESH_BINARY+cv2.THRESH_OTSU)
-
 
 cv2.imshow("Original.jpg", orig)
 #cv2.imshow("Original Gray.jpg", gray)
